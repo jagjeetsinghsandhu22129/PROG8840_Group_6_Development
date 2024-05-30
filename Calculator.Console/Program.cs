@@ -16,9 +16,17 @@ switch(OptionChoice){
         float Sum = Evaluator.Eval("+", Number1Converted, Number2Converted);
         Console.WriteLine($"{Number1Converted} + {Number2Converted} = {Sum}");
         break;
+    case "2":
+        float Sub = Evaluator.Eval("-", Number1Converted, Number2Converted);
+        Console.WriteLine($"{Number1Converted} - {Number2Converted} = {Sub}");
+        break;
     case "3":
         float Product = Evaluator.Eval("*", Number1Converted, Number2Converted);
         Console.WriteLine($"{Number1Converted} * {Number2Converted} = {Product}");
+        break;
+    case "4":
+        float Divide = Evaluator.Eval("/", Number1Converted, Number2Converted);
+        Console.WriteLine($"{Number1Converted} / {Number2Converted} = {Divide}");
         break;
     default:
         throw new Exception("unimplemented");
