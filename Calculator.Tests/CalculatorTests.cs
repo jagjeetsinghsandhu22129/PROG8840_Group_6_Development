@@ -23,6 +23,11 @@ public class CalculatorTests
         Assert.Equal(4L, Divide.Eval(12L, 3L));
     }
     [Fact]
+    public void TestModulo()
+    {
+        Assert.Equal(1L, Modulo.Eval(10L, 3L));
+    }
+    [Fact]
     public void TestAdd2()
     {
         Assert.Equal(22L, Add.Eval(16L, 6L));
@@ -83,10 +88,15 @@ public class CalculatorTests
         Assert.Equal(4, Evaluator.Eval("/", 8, 2));
     }
     [Fact]
-    public void TestInvalidOperation()
+    public void TestModuloOperation()
     {
-        Assert.Throws<Exception>(() => Evaluator.Eval("%", 9, 9));
+        Assert.Equal(2, Evaluator.Eval("%", 18, 4));
     }
+    //[Fact]
+    //public void TestInvalidOperation()
+    //{
+      //  Assert.Throws<Exception>(() => Evaluator.Eval("%", 9, 9));
+   // }
 
     [Fact]
     public void TestContinueOperations()
@@ -100,6 +110,8 @@ public class CalculatorTests
         Assert.Equal(20, result3);
         float result4 = Evaluator.Eval("/", result3, 4);
         Assert.Equal(5, result4);
+        float result5 = Evaluator.Eval("%", result4, 2);
+        Assert.Equal(1, result5);
     }
 
 }

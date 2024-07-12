@@ -52,6 +52,17 @@ while (!exit)
                 Console.WriteLine("Cannot divide by zero. Please enter a valid number for the division.");
             }
             break;
+        case "6":
+            if (Number2Converted != 0)
+            {
+                float Modulo = Evaluator.Eval("%", Number1Converted, Number2Converted);
+                Console.WriteLine($"{Number1Converted} % {Number2Converted} = {Modulo}");
+            }
+            else
+            {
+                Console.WriteLine("Cannot Modulo by zero. Please enter a valid number for the Modulo Operation.");
+            }
+            break;
         default:
             Console.WriteLine("Unimplemented option. Please enter a valid option.");
             break;
