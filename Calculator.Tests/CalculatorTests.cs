@@ -27,6 +27,12 @@ public class CalculatorTests
     {
         Assert.Equal(1L, Modulo.Eval(10L, 3L));
     }
+
+    [Fact]
+    public void TestPower()
+    {
+        Assert.Equal(25L, Power.Eval(5L, 2L));
+    }
     [Fact]
     public void TestAdd2()
     {
@@ -92,11 +98,16 @@ public class CalculatorTests
     {
         Assert.Equal(2, Evaluator.Eval("%", 18, 4));
     }
+    [Fact]
+    public void TestPowerOperation()
+    {
+        Assert.Equal(27, Evaluator.Eval("^", 3, 3));
+    }
     //[Fact]
     //public void TestInvalidOperation()
     //{
-      //  Assert.Throws<Exception>(() => Evaluator.Eval("%", 9, 9));
-   // }
+    //  Assert.Throws<Exception>(() => Evaluator.Eval("%", 9, 9));
+    // }
 
     [Fact]
     public void TestContinueOperations()
@@ -112,6 +123,8 @@ public class CalculatorTests
         Assert.Equal(5, result4);
         float result5 = Evaluator.Eval("%", result4, 2);
         Assert.Equal(1, result5);
+        float result6 = Evaluator.Eval("^", result5, 2);
+        Assert.Equal(1, result6);
     }
 
 }

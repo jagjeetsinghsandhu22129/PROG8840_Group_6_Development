@@ -63,6 +63,10 @@ while (!exit)
                 Console.WriteLine("Cannot Modulo by zero. Please enter a valid number for the Modulo Operation.");
             }
             break;
+        case "7":
+            float Power = Evaluator.Eval("^", Number1Converted, Number2Converted);
+            Console.WriteLine($"{Number1Converted} ^ {Number2Converted} = {Power}");
+            break;
         default:
             Console.WriteLine("Unimplemented option. Please enter a valid option.");
             break;

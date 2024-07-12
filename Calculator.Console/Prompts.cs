@@ -10,8 +10,9 @@ public class Prompts{
         Console.WriteLine("2. Subtract");
         Console.WriteLine("3. Multiply");
         Console.WriteLine("4. Divide");
-        Console.WriteLine("6. Modulo");
         Console.WriteLine("5. Exit");
+        Console.WriteLine("6. Modulo");
+        Console.WriteLine("7. Power");
     }
 
 }
