@@ -34,6 +34,11 @@ public class CalculatorTests
         Assert.Equal(25L, Power.Eval(5L, 2L));
     }
     [Fact]
+    public void TestSquareRoot()
+    {
+        Assert.Equal(4, SquareRoot.Eval(16));
+    }
+    [Fact]
     public void TestAdd2()
     {
         Assert.Equal(22L, Add.Eval(16L, 6L));
@@ -103,6 +108,42 @@ public class CalculatorTests
     {
         Assert.Equal(27, Evaluator.Eval("^", 3, 3));
     }
+    [Fact]
+    public void TestSquareRootOperation()
+    {
+        Assert.Equal(3, Evaluator.Eval("sqrt", 9));
+    }
+
+    [Fact]
+    public void TestSquareRootOfZero()
+    {
+        Assert.Equal(0f, SquareRoot.Eval(0f));
+    }
+
+    [Fact]
+    public void TestSquareRootOfOne()
+    {
+        Assert.Equal(1f, SquareRoot.Eval(1f));
+    }
+
+    [Fact]
+    public void TestSquareRootOfNegativeNumber()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() => SquareRoot.Eval(-1f));
+    }
+
+
+    [Fact]
+    public void TestSquareRootOfFraction()
+    {
+        Assert.Equal(0.5f, SquareRoot.Eval(0.25f));
+    }
+
+    // [Fact]
+    // public void TestSquareRootOfNegativeNumber()
+    //{
+    //   Assert.Throws<ArgumentException>(() => SquareRoot.Eval(-1f));
+    // }
     //[Fact]
     //public void TestInvalidOperation()
     //{
@@ -125,6 +166,13 @@ public class CalculatorTests
         Assert.Equal(1, result5);
         float result6 = Evaluator.Eval("^", result5, 2);
         Assert.Equal(1, result6);
+        float result7 = Evaluator.Eval("sqrt", result6);
+        Assert.Equal(1, result7);
     }
+    //[Fact]
+   // public void TestDivideByZero()
+    //{
+      //  Assert.Throws<DivideByZeroException>(() => Divide.Eval(10L, 0L));
+    //}
 
 }

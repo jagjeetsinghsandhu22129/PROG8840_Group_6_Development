@@ -21,6 +21,13 @@ namespace Calculator{
                 case "^":
                     result = Power.Eval(Operands[0], Operands[1]);
                     break;
+                case "sqrt": // Square root case
+                    if (Operands.Length != 1)
+                    {
+                        throw new ArgumentException("Square root requires exactly one operand.");
+                    }
+                    result = SquareRoot.Eval(Operands[0]);
+                    break;
                 default:
                     throw new Exception("unimplemented");
             }
