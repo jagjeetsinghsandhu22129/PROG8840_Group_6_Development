@@ -15,7 +15,8 @@ public class Prompts{
         Console.WriteLine("7. Power");
         Console.WriteLine("8. SquareRoot");
         Console.WriteLine("9. Percentage");
-        Console.WriteLine("10. Factorial");	
+        Console.WriteLine("10. Factorial");
+        Console.WriteLine("11. Memory Functions");
     }
 
 }
