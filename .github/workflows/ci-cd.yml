@@ -31,9 +31,14 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
 
-    - name: Push code to PROG8840_Group_6
+    - name: Configure git
       run: |
         git config --global user.email "jagjeetsinghsandhu22129@gmail.com"
         git config --global user.name "jagjeetsinghsandhu22129"
-        git remote add target https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/jagjeetsinghsandhu22129/PROG8840_Group_6.git
+
+    - name: Add remote and push code to PROG8840_Group_6
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: |
+        git remote add target https://x-access-token:${GITHUB_TOKEN}@github.com/jagjeetsinghsandhu22129/PROG8840_Group_6.git
         git push target HEAD:main
