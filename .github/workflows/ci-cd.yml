@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # Grant write permissions for repository contents
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -32,4 +35,6 @@ jobs:
         git config --global user.email "jagjeetsinghsandhu22129@gmail.com"
         git config --global user.name "jagjeetsinghsandhu22129"
         git remote add target_repo https://github.com/jagjeetsinghsandhu22129/PROG8840_Group_6.git
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/jagjeetsinghsandhu22129/PROG8840_Group_6.git main
+        git push target_repo main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Ensure to use the default GITHUB_TOKEN
