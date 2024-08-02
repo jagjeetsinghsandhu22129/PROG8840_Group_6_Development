@@ -17,6 +17,7 @@ public class Prompts{
         Console.WriteLine("9. Percentage");
         Console.WriteLine("10. Factorial");
         Console.WriteLine("11. Memory Functions");
+        Console.WriteLine("11. Average");
     }
 
 }
