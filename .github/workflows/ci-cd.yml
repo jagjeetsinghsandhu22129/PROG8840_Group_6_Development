@@ -31,6 +31,7 @@ jobs:
     - name: Test
     
       run: dotnet test --no-restore --verbosity normal
+      
 
     - name: Push code to PROG8840_Group_6
       env:
