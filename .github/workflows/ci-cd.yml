@@ -34,7 +34,7 @@ jobs:
     - name: Configure git
       run: |
         git config --global user.email "jagjeetsinghsandhu22129@gmail.com"
-        git config --global user.name "github-actions[bot]"
+        git config --global user.name "jagjeetsinghsandhu2212"
 
     - name: Add remote and push code to PROG8840_Group_6
       env:
